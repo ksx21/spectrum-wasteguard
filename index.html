@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WasteGuard - Smart Waste Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-leaf"></i> Waste<span>Guard</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#report">Report Issue</a></li>
+                <li><a href="#tracker">Tracker</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Smarter Waste Management for Cleaner Cities</h1>
+            <p>Report illegal dumping, schedule municipal pickups, and track waste resolution in real time.</p>
+            <div class="hero-btns">
+                <a href="#report" class="btn btn-primary"><i class="fa-solid fa-triangle-exclamation"></i> Report Waste</a>
+                <a href="about.html" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="container">
+        <!-- Feature Highlights -->
+        <section class="features">
+            <div class="feature-card">
+                <i class="fa-solid fa-location-dot feature-icon"></i>
+                <h3>Geo-Tagging</h3>
+                <p>Pin precise locations for quick dispatch of sanitation teams.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-recycle feature-icon"></i>
+                <h3>Smart Sorting</h3>
+                <p>Categorize hazardous, organic, and recyclable materials easily.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-chart-line feature-icon"></i>
+                <h3>Real-Time Tracking</h3>
+                <p>Monitor your report status from submission to clean-up verification.</p>
+            </div>
+        </section>
+
+        <!-- Report Form Section -->
+        <section id="report" class="section-card">
+            <h2><i class="fa-solid fa-bullhorn"></i> Report Waste Incident</h2>
+            <p>Help us keep your neighborhood clean by filling out the details below.</p>
+            
+            <form id="wasteReportForm">
+                <div class="form-group">
+                    <label for="location">Location / Address</label>
+                    <input type="text" id="location" placeholder="e.g., 5th Avenue & Main St" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="wasteType">Waste Type</label>
+                        <select id="wasteType" required>
+                            <option value="" disabled selected>Select category</option>
+                            <option value="Household Trash">Household Trash</option>
+                            <option value="Illegal Dumping">Illegal Dumping</option>
+                            <option value="Hazardous Material">Hazardous Material</option>
+                            <option value="Electronic Waste">Electronic Waste</option>
+                            <option value="Overflowing Bin">Overflowing Public Bin</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="priority">Priority Level</label>
+                        <select id="priority" required>
+                            <option value="Low">Low</option>
+                            <option value="Medium" selected>Medium</option>
+                            <option value="High">High (Immediate Hazard)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Details / Description</label>
+                    <textarea id="description" rows="3" placeholder="Provide extra details to help cleanup crews..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fa-solid fa-paper-plane"></i> Submit Report
+                </button>
+            </form>
+        </section>
+
+        <!-- Incident Tracker Section -->
+        <section id="tracker" class="section-card">
+            <h2><i class="fa-solid fa-clock-rotate-left"></i> Live Incident Tracker</h2>
+            <p>Recent community reports and their current municipal resolution status.</p>
+            
+            <div class="table-responsive">
+                <table class="report-table">
+                    <thead>
+                        <tr>
+                            <th>Report ID</th>
+                            <th>Location</th>
+                            <th>Type</th>
+                            <th>Priority</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reportTableBody">
+                        <tr>
+                            <td>#WG-8092</td>
+                            <td>Central Park East Entrance</td>
+                            <td>Overflowing Bin</td>
+                            <td><span class="badge badge-low">Low</span></td>
+                            <td><span class="status status-resolved">Resolved</span></td>
+                        </tr>
+                        <tr>
+                            <td>#WG-8093</td>
+                            <td>12th St Industrial Area</td>
+                            <td>Illegal Dumping</td>
+                            <td><span class="badge badge-high">High</span></td>
+                            <td><span class="status status-progress">In Progress</span></td>
+                        </tr>
+                        <tr>
+                            <td>#WG-8094</td>
+                            <td>Oak Street Market</td>
+                            <td>Electronic Waste</td>
+                            <td><span class="badge badge-medium">Medium</span></td>
+                            <td><span class="status status-pending">Pending</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 WasteGuard Initiative. All rights reserved.</p>
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - WasteGuard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-leaf"></i> Waste<span>Guard</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="index.html#report">Report Issue</a></li>
+                <li><a href="index.html#tracker">Tracker</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Banner -->
+    <div class="page-banner">
+        <h1>About WasteGuard</h1>
+        <p>Building cleaner, sustainable communities through smart technology.</p>
+    </div>
+
+    <!-- Main Content Container -->
+    <main class="container">
+        <!-- Mission Section -->
+        <section class="section-card">
+            <h2>Our Mission</h2>
+            <p class="lead-text">
+                WasteGuard bridges the gap between citizens and municipal waste management teams. Our digital platform enables real-time reporting, automated task allocation, and transparent tracking to ensure urban sanitation is fast, effective, and community-driven.
+            </p>
+        </section>
+
+        <!-- Stats Counter Section -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <i class="fa-solid fa-truck-ramp-box"></i>
+                <h3>12,450+</h3>
+                <p>Tons Collected</p>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-circle-check"></i>
+                <h3>98%</h3>
+                <p>Resolution Rate</p>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-users"></i>
+                <h3>45,000+</h3>
+                <p>Active Citizens</p>
+            </div>
+        </section>
+
+        <!-- Core Pillars -->
+        <section class="section-card">
+            <h2>Core Pillars</h2>
+            <div class="pillars-grid">
+                <div class="pillar-item">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h4>Environmental Safety</h4>
+                    <p>Preventing hazardous chemical leakages and unlawful illegal dumping across urban zones.</p>
+                </div>
+                <div class="pillar-item">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h4>Rapid Dispatch</h4>
+                    <p>Optimizing truck routes and crew schedules for faster response times to severe complaints.</p>
+                </div>
+                <div class="pillar-item">
+                    <i class="fa-solid fa-handshake"></i>
+                    <h4>Civic Participation</h4>
+                    <p>Empowering local neighborhoods to take active ownership of their local environment.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 WasteGuard Initiative. All rights reserved.</p>
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - WasteGuard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-leaf"></i> Waste<span>Guard</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="index.html#report">Report Issue</a></li>
+                <li><a href="index.html#tracker">Tracker</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Banner -->
+    <div class="page-banner">
+        <h1>About WasteGuard</h1>
+        <p>Building cleaner, sustainable communities through smart technology.</p>
+    </div>
+
+    <!-- Main Content Container -->
+    <main class="container">
+        <!-- Mission Section -->
+        <section class="section-card">
+            <h2>Our Mission</h2>
+            <p class="lead-text">
+                WasteGuard bridges the gap between citizens and municipal waste management teams. Our digital platform enables real-time reporting, automated task allocation, and transparent tracking to ensure urban sanitation is fast, effective, and community-driven.
+            </p>
+        </section>
+
+        <!-- Stats Counter Section -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <i class="fa-solid fa-truck-ramp-box"></i>
+                <h3>12,450+</h3>
+                <p>Tons Collected</p>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-circle-check"></i>
+                <h3>98%</h3>
+                <p>Resolution Rate</p>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-users"></i>
+                <h3>45,000+</h3>
+                <p>Active Citizens</p>
+            </div>
+        </section>
+
+        <!-- Core Pillars -->
+        <section class="section-card">
+            <h2>Core Pillars</h2>
+            <div class="pillars-grid">
+                <div class="pillar-item">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h4>Environmental Safety</h4>
+                    <p>Preventing hazardous chemical leakages and unlawful illegal dumping across urban zones.</p>
+                </div>
+                <div class="pillar-item">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h4>Rapid Dispatch</h4>
+                    <p>Optimizing truck routes and crew schedules for faster response times to severe complaints.</p>
+                </div>
+                <div class="pillar-item">
+                    <i class="fa-solid fa-handshake"></i>
+                    <h4>Civic Participation</h4>
+                    <p>Empowering local neighborhoods to take active ownership of their local environment.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 WasteGuard Initiative. All rights reserved.</p>
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+              </html>
